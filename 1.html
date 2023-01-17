@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-01-16 Mon 22:17 -->
+<!-- 2023-01-17 Tue 12:03 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>&lrm;</title>
@@ -192,6 +192,27 @@
     { background-color: #ffff00; color: #000000; font-weight: bold; }
   .org-svg { }
 </style>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
 </head>
 <body>
 <div id="content" class="content">
@@ -200,21 +221,427 @@
 </p>
 
 <p>
-​2. Поработать со всеми строковыми функциями, разобранными на лекции. В качестве параметра в строковых функциях использовать Фамилию, имя, отчество студента. В отчете представить скриншоты с результатом работы функций в MySQL.
+Таблица сотрудников (employee):
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-right" />
+
+<col  class="org-left" />
+
+<col  class="org-right" />
+
+<col  class="org-left" />
+
+<col  class="org-right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-right">id</th>
+<th scope="col" class="org-left">last<sub>name</sub></th>
+<th scope="col" class="org-left">first<sub>name</sub></th>
+<th scope="col" class="org-left">second<sub>name</sub></th>
+<th scope="col" class="org-left">date<sub>of</sub><sub>birth</sub></th>
+<th scope="col" class="org-right">sex</th>
+<th scope="col" class="org-left">address</th>
+<th scope="col" class="org-right">phone<sub>number</sub></th>
+<th scope="col" class="org-left">passport<sub>details</sub></th>
+<th scope="col" class="org-right">position<sub>id</sub></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-right">1</td>
+<td class="org-left">Панков</td>
+<td class="org-left">Василий</td>
+<td class="org-left">Дмитриевич</td>
+<td class="org-left">2003-12-15 12:10:59</td>
+<td class="org-right">1</td>
+<td class="org-left">Суховский переулок 23</td>
+<td class="org-right">+79627011087</td>
+<td class="org-left">1111 111111</td>
+<td class="org-right">1</td>
+</tr>
+
+<tr>
+<td class="org-right">2</td>
+<td class="org-left">Гайкин</td>
+<td class="org-left">Кирилл</td>
+<td class="org-left">Денисович</td>
+<td class="org-left">1999-07-17 12:11:08</td>
+<td class="org-right">1</td>
+<td class="org-left">Кобринская улица 5</td>
+<td class="org-right">+79118445162</td>
+<td class="org-left">2222 222222</td>
+<td class="org-right">2</td>
+</tr>
+
+<tr>
+<td class="org-right">3</td>
+<td class="org-left">Турсунова</td>
+<td class="org-left">Лидия</td>
+<td class="org-left">Сергеевна</td>
+<td class="org-left">1980-11-06 12:11:18</td>
+<td class="org-right">2</td>
+<td class="org-left">набережная Крутой реки 149</td>
+<td class="org-right">+71111111111</td>
+<td class="org-left">1234 567891</td>
+<td class="org-right">3</td>
+</tr>
+
+<tr>
+<td class="org-right">9</td>
+<td class="org-left">Панков</td>
+<td class="org-left">Вася</td>
+<td class="org-left">Дмитриевич</td>
+<td class="org-left">2006-12-16 12:11:32</td>
+<td class="org-right">1</td>
+<td class="org-left">NULL</td>
+<td class="org-right">+79627011087</td>
+<td class="org-left">1111 444444</td>
+<td class="org-right">2</td>
+</tr>
+
+<tr>
+<td class="org-right">10</td>
+<td class="org-left">Виктор</td>
+<td class="org-left">Виктор</td>
+<td class="org-left">Виктор</td>
+<td class="org-left">2004-07-02 12:11:41</td>
+<td class="org-right">1</td>
+<td class="org-left">а</td>
+<td class="org-right">+79627011087</td>
+<td class="org-left">1111 111111</td>
+<td class="org-right">2</td>
+</tr>
+
+<tr>
+<td class="org-right">id</td>
+<td class="org-left">name</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-right">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-right">1</td>
+<td class="org-left">Россия</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-right">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-right">2</td>
+<td class="org-left">США</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-right">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-right">3</td>
+<td class="org-left">Китай</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-right">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-right">4</td>
+<td class="org-left">Франция</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-right">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-right">5</td>
+<td class="org-left">Австралия</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-right">&#xa0;</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+Полученный экспорт в CSV:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-csv">id,last_name,first_name,second_name,date_of_birth,sex,address,phone_number,passport_details,position_id
+1,Панков,Василий,Дмитриевич,2003-12-15 12:10:59,1,Суховский переулок 23,+79627011087,1111 111111,1
+2,Гайкин,Кирилл,Денисович,1999-07-17 12:11:08,1,Кобринская улица 5,+79118445162,2222 222222,2
+3,Турсунова,Лидия,Сергеевна,1980-11-06 12:11:18,2,набережная Крутой реки 149,+71111111111,1234 567891,3
+9,Панков,Вася,Дмитриевич,2006-12-16 12:11:32,1,,+79627011087,1111 444444,2
+10,Виктор,Виктор,Виктор,2004-07-02 12:11:41,1,а,+79627011087,1111 111111,2
+</pre>
+</div>
+
+<p>
+Таблица стран (country):
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-right">id</th>
+<th scope="col" class="org-left">name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-right">1</td>
+<td class="org-left">Россия</td>
+</tr>
+
+<tr>
+<td class="org-right">2</td>
+<td class="org-left">США</td>
+</tr>
+
+<tr>
+<td class="org-right">3</td>
+<td class="org-left">Китай</td>
+</tr>
+
+<tr>
+<td class="org-right">4</td>
+<td class="org-left">Франция</td>
+</tr>
+
+<tr>
+<td class="org-right">5</td>
+<td class="org-left">Австралия</td>
+</tr>
+</tbody>
+</table>
+
+
+<p>
+Полученный экспорт в JSON:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-json">[
+  {
+    "id": 1,
+    "name": "Россия"
+  },
+  {
+    "id": 2,
+    "name": "США"
+  },
+  {
+    "id": 3,
+    "name": "Китай"
+  },
+  {
+    "id": 4,
+    "name": "Франция"
+  },
+  {
+    "id": 5,
+    "name": "Австралия"
+  }
+]
+</pre>
+</div>
+
+<p>
+Таблица должностей (position):
 </p>
 
 
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-left" />
+
+<col  class="org-right" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-right">id</th>
+<th scope="col" class="org-left">name</th>
+<th scope="col" class="org-right">salary</th>
+<th scope="col" class="org-left">responsibilities</th>
+<th scope="col" class="org-left">requirements</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-right">1</td>
+<td class="org-left">Директор</td>
+<td class="org-right">500000</td>
+<td class="org-left">Руководить</td>
+<td class="org-left">NULL</td>
+</tr>
+
+<tr>
+<td class="org-right">2</td>
+<td class="org-left">Продавец</td>
+<td class="org-right">40000</td>
+<td class="org-left">Эффективно продавать товары</td>
+<td class="org-left">1. Выполнять скрипты\n2. Выполнять нормы продаж\n3. Уведомлять покупателей о новых акциях</td>
+</tr>
+
+<tr>
+<td class="org-right">3</td>
+<td class="org-left">Главный менеджер</td>
+<td class="org-right">92000</td>
+<td class="org-left">Следить за работой подчинённых</td>
+<td class="org-left">1. Оформлять кучу отчётов\n2. Следить за работой подчинённых</td>
+</tr>
+
+<tr>
+<td class="org-right">5</td>
+<td class="org-left">Стажёр</td>
+<td class="org-right">10000</td>
+<td class="org-left">Учиться работать</td>
+<td class="org-left">Должен работать под надзором сотрудника-наставника.</td>
+</tr>
+
+<tr>
+<td class="org-right">6</td>
+<td class="org-left">Младший менеджер</td>
+<td class="org-right">30000</td>
+<td class="org-left">Бумажная работа</td>
+<td class="org-left">Оформляет товары и занимается большей бумажной работой чем главный менеджер.</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+Полученный экспорт в XML:
+</p>
+
 <div class="org-src-container">
-<pre class="src src-sql"><span style="color: #00796b;">SELECT</span> CONCAT_WS(<span style="color: #689f38;">' '</span>, <span style="color: #689f38;">'&#1052;&#1077;&#1085;&#1103;'</span>, <span style="color: #689f38;">'&#1079;&#1086;&#1074;&#1091;&#1090;:'</span>, CONCAT(<span style="color: #B71C1C;">UPPER</span>(<span style="color: #689f38;">'&#1087;'</span>), <span style="color: #B71C1C;">LOWER</span>(<span style="color: #689f38;">'&#1040;&#1053;&#1050;&#1054;&#1042;'</span>)), <span style="color: #689f38;">'&#1042;&#1072;&#1089;&#1103;,'</span>, <span style="color: #689f38;">'&#1082;&#1089;&#1090;&#1072;&#1090;&#1080;'</span>, <span style="color: #689f38;">'&#1076;&#1083;&#1080;&#1085;&#1072;'</span>, <span style="color: #689f38;">'&#1084;&#1086;&#1077;&#1075;&#1086;'</span>,
-         <span style="color: #689f38;">'&#1080;&#1084;&#1077;&#1085;&#1080;:'</span>,
-         CONCAT(<span style="color: #689f38;">''</span>, <span style="color: #00796b;">LENGTH</span>(<span style="color: #689f38;">'&#1042;&#1072;&#1089;&#1103;'</span>), <span style="color: #689f38;">','</span>), <span style="color: #689f38;">'&#1072;'</span>, <span style="color: #689f38;">'&#1073;&#1091;&#1082;&#1074;&#1072;'</span>, <span style="color: #689f38;">'&#1071;'</span>, <span style="color: #689f38;">'&#1085;&#1072;&#1093;&#1086;&#1076;&#1080;&#1090;&#1089;&#1103;'</span>, <span style="color: #689f38;">'&#1085;&#1072;'</span>, LOCATE(<span style="color: #689f38;">'&#1103;'</span>, <span style="color: #689f38;">'&#1042;&#1072;&#1089;&#1103;'</span>), <span style="color: #689f38;">'&#1087;&#1086;&#1079;&#1080;&#1094;&#1080;&#1080;.'</span>,
-         <span style="color: #689f38;">'&#1044;&#1072;&#1074;&#1072;&#1081;&#1090;&#1077;'</span>, <span style="color: #689f38;">'&#1087;&#1086;&#1080;&#1075;&#1088;&#1072;&#1077;&#1084;&#1089;&#1103;'</span>, <span style="color: #689f38;">'&#1089;'</span>, <span style="color: #689f38;">'&#1084;&#1086;&#1077;&#1081;'</span>, <span style="color: #689f38;">'&#1092;&#1072;&#1084;&#1080;&#1083;&#1080;&#1077;&#1081;:'</span>,
-         <span style="color: #B71C1C;">LOWER</span>(CONCAT(<span style="color: #00796b;">RIGHT</span>(<span style="color: #689f38;">'&#1055;&#1072;&#1085;&#1082;&#1086;&#1074;'</span>, 4), <span style="color: #B71C1C;">SUBSTRING</span>(<span style="color: #689f38;">'&#1055;&#1072;&#1085;&#1082;&#1086;&#1074;'</span>, 2, 2), SUBSTRING_INDEX(<span style="color: #689f38;">'&#1055;&#1072;&#1085;&#1082;&#1086;&#1074;'</span>, <span style="color: #689f38;">'&#1085;'</span>, 1),
-                      <span style="color: #00796b;">LEFT</span>(<span style="color: #689f38;">'&#1055;&#1072;&#1085;&#1082;&#1086;&#1074;'</span>, 3), <span style="color: #689f38;">'.'</span>)), <span style="color: #689f38;">'&#1053;&#1072;&#1074;&#1077;&#1088;&#1085;&#1086;&#1077; &#1089; &#1050;&#1080;&#1088;&#1080;&#1083;&#1083;&#1086;&#1084; &#1074;&#1099; &#1085;&#1077;&#1079;&#1085;&#1072;&#1082;&#1086;&#1084;&#1099;,'</span>,
-         <span style="color: #689f38;">'&#1085;&#1086; &#1077;&#1075;&#1086; &#1080;&#1084;&#1103; &#1086;&#1090;&#1083;&#1080;&#1095;&#1085;&#1086; &#1087;&#1088;&#1077;&#1086;&#1073;&#1088;&#1072;&#1079;&#1091;&#1077;&#1090;&#1089;&#1103; &#1074;'</span>, CONCAT(REPLACE(<span style="color: #689f38;">'&#1050;&#1080;&#1088;&#1080;&#1083;&#1083;'</span>, <span style="color: #689f38;">'&#1088;&#1080;&#1083;&#1083;'</span>, <span style="color: #689f38;">'&#1083;&#1100;&#1082;&#1072;'</span>), <span style="color: #689f38;">','</span>),
-         <span style="color: #689f38;">'&#1072; &#1077;&#1097;&#1105; &#1082;&#1083;&#1072;&#1089;&#1089;&#1085;&#1086; &#1087;&#1080;&#1096;&#1077;&#1090;&#1089;&#1103; &#1079;&#1072;&#1076;&#1086;&#1084; &#1085;&#1072;&#1087;&#1077;&#1088;&#1105;&#1076;:'</span>, REVERSE(<span style="color: #689f38;">'&#1050;&#1080;&#1088;&#1080;&#1083;&#1083;'</span>)) <span style="color: #00796b;">AS</span> <span style="color: #689f38;">'RESULT'</span>;
+<pre class="src src-xml">&lt;?<span style="color: #00796b;">xml</span> <span style="color: #673ab7;">version="1.0" encoding="UTF-8"</span>?&gt;
+&lt;<span style="color: #0097A7;">data</span>&gt;
+&lt;<span style="color: #0097A7;">row</span>&gt;
+  &lt;<span style="color: #0097A7;">id</span>&gt;1&lt;/<span style="color: #0097A7;">id</span>&gt;
+  &lt;<span style="color: #0097A7;">name</span>&gt;&#1044;&#1080;&#1088;&#1077;&#1082;&#1090;&#1086;&#1088;&lt;/<span style="color: #0097A7;">name</span>&gt;
+  &lt;<span style="color: #0097A7;">salary</span>&gt;500000&lt;/<span style="color: #0097A7;">salary</span>&gt;
+  &lt;<span style="color: #0097A7;">responsibilities</span>&gt;&#1056;&#1091;&#1082;&#1086;&#1074;&#1086;&#1076;&#1080;&#1090;&#1100;&lt;/<span style="color: #0097A7;">responsibilities</span>&gt;
+  &lt;<span style="color: #0097A7;">requirements</span>&gt;null&lt;/<span style="color: #0097A7;">requirements</span>&gt;
+&lt;/<span style="color: #0097A7;">row</span>&gt;
+&lt;<span style="color: #0097A7;">row</span>&gt;
+  &lt;<span style="color: #0097A7;">id</span>&gt;2&lt;/<span style="color: #0097A7;">id</span>&gt;
+  &lt;<span style="color: #0097A7;">name</span>&gt;&#1055;&#1088;&#1086;&#1076;&#1072;&#1074;&#1077;&#1094;&lt;/<span style="color: #0097A7;">name</span>&gt;
+  &lt;<span style="color: #0097A7;">salary</span>&gt;40000&lt;/<span style="color: #0097A7;">salary</span>&gt;
+  &lt;<span style="color: #0097A7;">responsibilities</span>&gt;&#1069;&#1092;&#1092;&#1077;&#1082;&#1090;&#1080;&#1074;&#1085;&#1086; &#1087;&#1088;&#1086;&#1076;&#1072;&#1074;&#1072;&#1090;&#1100; &#1090;&#1086;&#1074;&#1072;&#1088;&#1099;&lt;/<span style="color: #0097A7;">responsibilities</span>&gt;
+  &lt;<span style="color: #0097A7;">requirements</span>&gt;1. &#1042;&#1099;&#1087;&#1086;&#1083;&#1085;&#1103;&#1090;&#1100; &#1089;&#1082;&#1088;&#1080;&#1087;&#1090;&#1099;
+2. &#1042;&#1099;&#1087;&#1086;&#1083;&#1085;&#1103;&#1090;&#1100; &#1085;&#1086;&#1088;&#1084;&#1099; &#1087;&#1088;&#1086;&#1076;&#1072;&#1078;
+3. &#1059;&#1074;&#1077;&#1076;&#1086;&#1084;&#1083;&#1103;&#1090;&#1100; &#1087;&#1086;&#1082;&#1091;&#1087;&#1072;&#1090;&#1077;&#1083;&#1077;&#1081; &#1086; &#1085;&#1086;&#1074;&#1099;&#1093; &#1072;&#1082;&#1094;&#1080;&#1103;&#1093;&lt;/<span style="color: #0097A7;">requirements</span>&gt;
+&lt;/<span style="color: #0097A7;">row</span>&gt;
+&lt;<span style="color: #0097A7;">row</span>&gt;
+  &lt;<span style="color: #0097A7;">id</span>&gt;3&lt;/<span style="color: #0097A7;">id</span>&gt;
+  &lt;<span style="color: #0097A7;">name</span>&gt;&#1043;&#1083;&#1072;&#1074;&#1085;&#1099;&#1081; &#1084;&#1077;&#1085;&#1077;&#1076;&#1078;&#1077;&#1088;&lt;/<span style="color: #0097A7;">name</span>&gt;
+  &lt;<span style="color: #0097A7;">salary</span>&gt;92000&lt;/<span style="color: #0097A7;">salary</span>&gt;
+  &lt;<span style="color: #0097A7;">responsibilities</span>&gt;&#1057;&#1083;&#1077;&#1076;&#1080;&#1090;&#1100; &#1079;&#1072; &#1088;&#1072;&#1073;&#1086;&#1090;&#1086;&#1081; &#1087;&#1086;&#1076;&#1095;&#1080;&#1085;&#1105;&#1085;&#1085;&#1099;&#1093;&lt;/<span style="color: #0097A7;">responsibilities</span>&gt;
+  &lt;<span style="color: #0097A7;">requirements</span>&gt;1. &#1054;&#1092;&#1086;&#1088;&#1084;&#1083;&#1103;&#1090;&#1100; &#1082;&#1091;&#1095;&#1091; &#1086;&#1090;&#1095;&#1105;&#1090;&#1086;&#1074;
+2. &#1057;&#1083;&#1077;&#1076;&#1080;&#1090;&#1100; &#1079;&#1072; &#1088;&#1072;&#1073;&#1086;&#1090;&#1086;&#1081; &#1087;&#1086;&#1076;&#1095;&#1080;&#1085;&#1105;&#1085;&#1085;&#1099;&#1093;&lt;/<span style="color: #0097A7;">requirements</span>&gt;
+&lt;/<span style="color: #0097A7;">row</span>&gt;
+&lt;<span style="color: #0097A7;">row</span>&gt;
+  &lt;<span style="color: #0097A7;">id</span>&gt;5&lt;/<span style="color: #0097A7;">id</span>&gt;
+  &lt;<span style="color: #0097A7;">name</span>&gt;&#1057;&#1090;&#1072;&#1078;&#1105;&#1088;&lt;/<span style="color: #0097A7;">name</span>&gt;
+  &lt;<span style="color: #0097A7;">salary</span>&gt;10000&lt;/<span style="color: #0097A7;">salary</span>&gt;
+  &lt;<span style="color: #0097A7;">responsibilities</span>&gt;&#1059;&#1095;&#1080;&#1090;&#1100;&#1089;&#1103; &#1088;&#1072;&#1073;&#1086;&#1090;&#1072;&#1090;&#1100;&lt;/<span style="color: #0097A7;">responsibilities</span>&gt;
+  &lt;<span style="color: #0097A7;">requirements</span>&gt;&#1044;&#1086;&#1083;&#1078;&#1077;&#1085; &#1088;&#1072;&#1073;&#1086;&#1090;&#1072;&#1090;&#1100; &#1087;&#1086;&#1076; &#1085;&#1072;&#1076;&#1079;&#1086;&#1088;&#1086;&#1084; &#1089;&#1086;&#1090;&#1088;&#1091;&#1076;&#1085;&#1080;&#1082;&#1072;-&#1085;&#1072;&#1089;&#1090;&#1072;&#1074;&#1085;&#1080;&#1082;&#1072;.&lt;/<span style="color: #0097A7;">requirements</span>&gt;
+&lt;/<span style="color: #0097A7;">row</span>&gt;
+&lt;<span style="color: #0097A7;">row</span>&gt;
+  &lt;<span style="color: #0097A7;">id</span>&gt;6&lt;/<span style="color: #0097A7;">id</span>&gt;
+  &lt;<span style="color: #0097A7;">name</span>&gt;&#1052;&#1083;&#1072;&#1076;&#1096;&#1080;&#1081; &#1084;&#1077;&#1085;&#1077;&#1076;&#1078;&#1077;&#1088;&lt;/<span style="color: #0097A7;">name</span>&gt;
+  &lt;<span style="color: #0097A7;">salary</span>&gt;30000&lt;/<span style="color: #0097A7;">salary</span>&gt;
+  &lt;<span style="color: #0097A7;">responsibilities</span>&gt;&#1041;&#1091;&#1084;&#1072;&#1078;&#1085;&#1072;&#1103; &#1088;&#1072;&#1073;&#1086;&#1090;&#1072;&lt;/<span style="color: #0097A7;">responsibilities</span>&gt;
+  &lt;<span style="color: #0097A7;">requirements</span>&gt;&#1054;&#1092;&#1086;&#1088;&#1084;&#1083;&#1103;&#1077;&#1090; &#1090;&#1086;&#1074;&#1072;&#1088;&#1099; &#1080; &#1079;&#1072;&#1085;&#1080;&#1084;&#1072;&#1077;&#1090;&#1089;&#1103; &#1073;&#1086;&#1083;&#1100;&#1096;&#1077;&#1081; &#1073;&#1091;&#1084;&#1072;&#1078;&#1085;&#1086;&#1081; &#1088;&#1072;&#1073;&#1086;&#1090;&#1086;&#1081; &#1095;&#1077;&#1084; &#1075;&#1083;&#1072;&#1074;&#1085;&#1099;&#1081; &#1084;&#1077;&#1085;&#1077;&#1076;&#1078;&#1077;&#1088;.&lt;/<span style="color: #0097A7;">requirements</span>&gt;
+&lt;/<span style="color: #0097A7;">row</span>&gt;
+&lt;/<span style="color: #0097A7;">data</span>&gt;
 </pre>
 </div>
+
+
+<p>
+​2. Поработать со всеми строковыми функциями, разобранными на лекции. В качестве параметра в строковых функциях использовать Фамилию, имя, отчество студента. В отчете представить скриншоты с результатом работы функций в MySQL.
+</p>
+
+<p>
+Текст запроса:
+</p>
+<div class="org-src-container">
+<pre class="src src-sql" id="org1037fe6"><span style="color: #00796b;">SELECT</span> <span style="color: #B71C1C;">CONCAT_WS</span>(<span style="color: #689f38;">' '</span>, <span style="color: #689f38;">'&#1052;&#1077;&#1085;&#1103;'</span>, <span style="color: #689f38;">'&#1079;&#1086;&#1074;&#1091;&#1090;:'</span>, <span style="color: #B71C1C;">CONCAT</span>(<span style="color: #B71C1C;">UPPER</span>(<span style="color: #689f38;">'&#1087;'</span>), <span style="color: #B71C1C;">LOWER</span>(<span style="color: #689f38;">'&#1040;&#1053;&#1050;&#1054;&#1042;'</span>)), <span style="color: #689f38;">'&#1042;&#1072;&#1089;&#1103;,'</span>, <span style="color: #689f38;">'&#1082;&#1089;&#1090;&#1072;&#1090;&#1080;'</span>, <span style="color: #689f38;">'&#1076;&#1083;&#1080;&#1085;&#1072;'</span>, <span style="color: #689f38;">'&#1084;&#1086;&#1077;&#1075;&#1086;'</span>,
+         <span style="color: #689f38;">'&#1080;&#1084;&#1077;&#1085;&#1080;:'</span>,
+         <span style="color: #B71C1C;">CONCAT</span>(<span style="color: #689f38;">''</span>, <span style="color: #B71C1C;">LENGTH</span>(<span style="color: #689f38;">'&#1042;&#1072;&#1089;&#1103;'</span>), <span style="color: #689f38;">','</span>), <span style="color: #689f38;">'&#1072;'</span>, <span style="color: #689f38;">'&#1073;&#1091;&#1082;&#1074;&#1072;'</span>, <span style="color: #689f38;">'&#1071;'</span>, <span style="color: #689f38;">'&#1085;&#1072;&#1093;&#1086;&#1076;&#1080;&#1090;&#1089;&#1103;'</span>, <span style="color: #689f38;">'&#1085;&#1072;'</span>, <span style="color: #B71C1C;">LOCATE</span>(<span style="color: #689f38;">'&#1103;'</span>, <span style="color: #689f38;">'&#1042;&#1072;&#1089;&#1103;'</span>), <span style="color: #689f38;">'&#1087;&#1086;&#1079;&#1080;&#1094;&#1080;&#1080;.'</span>,
+         <span style="color: #689f38;">'&#1044;&#1072;&#1074;&#1072;&#1081;&#1090;&#1077;'</span>, <span style="color: #689f38;">'&#1087;&#1086;&#1080;&#1075;&#1088;&#1072;&#1077;&#1084;&#1089;&#1103;'</span>, <span style="color: #689f38;">'&#1089;'</span>, <span style="color: #689f38;">'&#1084;&#1086;&#1077;&#1081;'</span>, <span style="color: #689f38;">'&#1092;&#1072;&#1084;&#1080;&#1083;&#1080;&#1077;&#1081;:'</span>,
+         <span style="color: #B71C1C;">LOWER</span>(<span style="color: #B71C1C;">CONCAT</span>(<span style="color: #00796b;">RIGHT</span>(<span style="color: #689f38;">'&#1055;&#1072;&#1085;&#1082;&#1086;&#1074;'</span>, 4), <span style="color: #B71C1C;">SUBSTRING</span>(<span style="color: #689f38;">'&#1055;&#1072;&#1085;&#1082;&#1086;&#1074;'</span>, 2, 2), <span style="color: #B71C1C;">SUBSTRING_INDEX</span>(<span style="color: #689f38;">'&#1055;&#1072;&#1085;&#1082;&#1086;&#1074;'</span>, <span style="color: #689f38;">'&#1085;'</span>, 1),
+                      <span style="color: #00796b;">LEFT</span>(<span style="color: #689f38;">'&#1055;&#1072;&#1085;&#1082;&#1086;&#1074;'</span>, 3), <span style="color: #689f38;">'.'</span>)), <span style="color: #689f38;">'&#1053;&#1072;&#1074;&#1077;&#1088;&#1085;&#1086;&#1077; &#1089; &#1050;&#1080;&#1088;&#1080;&#1083;&#1083;&#1086;&#1084; &#1074;&#1099; &#1085;&#1077;&#1079;&#1085;&#1072;&#1082;&#1086;&#1084;&#1099;,'</span>,
+         <span style="color: #689f38;">'&#1085;&#1086; &#1077;&#1075;&#1086; &#1080;&#1084;&#1103; &#1086;&#1090;&#1083;&#1080;&#1095;&#1085;&#1086; &#1087;&#1088;&#1077;&#1086;&#1073;&#1088;&#1072;&#1079;&#1091;&#1077;&#1090;&#1089;&#1103; &#1074;'</span>, <span style="color: #B71C1C;">CONCAT</span>(<span style="color: #B71C1C;">REPLACE</span>(<span style="color: #689f38;">'&#1050;&#1080;&#1088;&#1080;&#1083;&#1083;'</span>, <span style="color: #689f38;">'&#1088;&#1080;&#1083;&#1083;'</span>, <span style="color: #689f38;">'&#1083;&#1100;&#1082;&#1072;'</span>), <span style="color: #689f38;">','</span>),
+         <span style="color: #689f38;">'&#1072; &#1077;&#1097;&#1105; &#1082;&#1083;&#1072;&#1089;&#1089;&#1085;&#1086; &#1087;&#1080;&#1096;&#1077;&#1090;&#1089;&#1103; &#1079;&#1072;&#1076;&#1086;&#1084; &#1085;&#1072;&#1087;&#1077;&#1088;&#1105;&#1076;:'</span>, <span style="color: #B71C1C;">REVERSE</span>(<span style="color: #689f38;">'&#1050;&#1080;&#1088;&#1080;&#1083;&#1083;'</span>)) <span style="color: #00796b;">AS</span> <span style="color: #689f38;">'RESULT'</span>;
+</pre>
+</div>
+
+<p>
+Полученный ответ:
+</p>
 
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
@@ -229,17 +656,283 @@
 </thead>
 <tbody>
 <tr>
-<td class="org-left">Меня зовут: Панков Вася, кстати длина моего имени: 8, а буква Я находится на 4 позиции. Давайте поиграемся с моей фамилией: нкованпапан. Наверное с Кириллом вы незнакомы, но его имя отлично преобразуется в Килька, а ещё классно пишется задом наперёд: ллириК</td>
+<td class="org-left">Меня зовут: Панков Вася, кстати длина моего имени: 8, а буква Я находится на 4 позиции.</td>
+</tr>
+
+<tr>
+<td class="org-left">Давайте поиграемся с моей фамилией: нкованпапан.</td>
+</tr>
+
+<tr>
+<td class="org-left">Наверное с Кириллом вы незнакомы, но его имя отлично преобразуется в Килька, а ещё классно пишется задом наперёд: ллириК</td>
 </tr>
 </tbody>
 </table>
 
 
 <p>
-​3. Поработать с функциями из Таблицы 1. В качестве параметра выбирается дата рождения студента. В отчете представить скриншоты с результатом работы функций в MySQL.</p>
+​3. Поработать с функциями из Таблицы 1. В качестве параметра выбирается дата рождения студента. В отчете представить скриншоты с результатом работы функций в MySQL.
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<caption class="t-above"><span class="table-number">Table 1:</span> Пример работы некоторых функций</caption>
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-right" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left"><b>Функция</b></td>
+<td class="org-right"><b>Результат</b></td>
+</tr>
+
+<tr>
+<td class="org-left">DAYOFMONTH('2018-05-25')</td>
+<td class="org-right">25</td>
+</tr>
+
+<tr>
+<td class="org-left">DAYOFWEEK('2018-05-25')</td>
+<td class="org-right">6</td>
+</tr>
+
+<tr>
+<td class="org-left">DAYOFYEAR('2018-05-25')</td>
+<td class="org-right">145</td>
+</tr>
+
+<tr>
+<td class="org-left">MONTH('2018-05-25')</td>
+<td class="org-right">5</td>
+</tr>
+
+<tr>
+<td class="org-left">YEAR('2018-05-25')</td>
+<td class="org-right">2018</td>
+</tr>
+
+<tr>
+<td class="org-left">QUARTER('2018-05-25')</td>
+<td class="org-right">2</td>
+</tr>
+
+<tr>
+<td class="org-left">WEEK('2018-05-25', 1)</td>
+<td class="org-right">21</td>
+</tr>
+
+<tr>
+<td class="org-left">LAST<sub>DAY</sub>('2018-05-25')</td>
+<td class="org-right">2018-05-31</td>
+</tr>
+
+<tr>
+<td class="org-left">DAYNAME('2018-05-25')</td>
+<td class="org-right">Friday</td>
+</tr>
+
+<tr>
+<td class="org-left">MONTHNAME('2018-05-25')</td>
+<td class="org-right">May</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+Текст запроса:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-sql" id="org134b198"><span style="color: #00796b;">SELECT</span> <span style="color: #B71C1C;">CONCAT_WS</span>(<span style="color: #689f38;">' '</span>, <span style="color: #689f38;">'&#1040; &#1074;&#1099; &#1079;&#1085;&#1072;&#1083;&#1080;, &#1095;&#1090;&#1086; &#1103; &#1088;&#1086;&#1076;&#1080;&#1083;&#1089;&#1103;'</span>, <span style="color: #B71C1C;">DAYOFMONTH</span>(birthday), <span style="color: #B71C1C;">MONTHNAME</span>(birthday), <span style="color: #0097A7;">YEAR</span>(birthday),
+       <span style="color: #689f38;">'&#1075;&#1086;&#1076;&#1072;, &#1074;'</span>, <span style="color: #B71C1C;">CONCAT</span>(<span style="color: #689f38;">''</span>, <span style="color: #B71C1C;">DAYNAME</span>(birthday), <span style="color: #689f38;">'.'</span>), <span style="color: #689f38;">'&#1069;&#1090;&#1086; &#1082;&#1089;&#1090;&#1072;&#1090;&#1080;'</span>, <span style="color: #B71C1C;">DAYOFYEAR</span>(birthday), <span style="color: #689f38;">'&#1076;&#1077;&#1085;&#1100; &#1080;'</span>, <span style="color: #0097A7;">WEEK</span>(birthday), <span style="color: #689f38;">'&#1085;&#1077;&#1076;&#1077;&#1083;&#1103; &#1074; &#1075;&#1086;&#1076;&#1091;.\n'</span>,
+       <span style="color: #689f38;">'&#1040; &#1074; &#1089;&#1077;&#1088;&#1100;&#1105;&#1079;&#1085;&#1086;&#1081; &#1073;&#1091;&#1093;&#1075;&#1072;&#1083;&#1090;&#1077;&#1088;&#1080;&#1080; &#1101;&#1090;&#1086;'</span>, <span style="color: #0097A7;">QUARTER</span>(birthday), <span style="color: #689f38;">'&#1082;&#1074;&#1072;&#1088;&#1090;&#1072;&#1083; &#1075;&#1086;&#1076;&#1072;.'</span>, <span style="color: #689f38;">'&#1069;&#1093;, &#1095;&#1090;&#1086; &#1074;&#1072;&#1084; &#1077;&#1097;&#1105; &#1088;&#1072;&#1089;&#1089;&#1082;&#1072;&#1079;&#1072;&#1090;&#1100;, &#1095;&#1090;&#1086; &#1103; &#1088;&#1086;&#1076;&#1080;&#1083;&#1089;&#1103; &#1074;'</span>,
+       <span style="color: #0097A7;">MONTH</span>(birthday), <span style="color: #689f38;">'&#1084;&#1077;&#1089;&#1103;&#1094; &#1087;&#1086; &#1089;&#1095;&#1105;&#1090;&#1091; &#1080;&#1083;&#1080; &#1090;&#1086; &#1095;&#1090;&#1086; &#1087;&#1086;&#1089;&#1083;&#1077;&#1076;&#1085;&#1080;&#1081; &#1076;&#1077;&#1085;&#1100; &#1101;&#1090;&#1086;&#1075;&#1086; &#1084;&#1077;&#1089;&#1103;&#1094;&#1072;'</span>,
+       <span style="color: #B71C1C;">CONCAT</span>(<span style="color: #689f38;">''</span>, <span style="color: #B71C1C;">DAYOFMONTH</span>(<span style="color: #B71C1C;">LAST_DAY</span>(birthday)), <span style="color: #689f38;">'.'</span>),
+       <span style="color: #689f38;">'&#1042;&#1080;&#1076;&#1080;&#1084;&#1086; &#1087;&#1088;&#1080;&#1076;&#1105;&#1090;&#1089;&#1103; &#1079;&#1072;&#1074;&#1077;&#1088;&#1096;&#1080;&#1090;&#1100; &#1088;&#1072;&#1089;&#1089;&#1082;&#1072;&#1079;.'</span>) <span style="color: #00796b;">AS</span> <span style="color: #00796b;">RESULT</span> <span style="color: #B71C1C;">FROM</span> (<span style="color: #00796b;">SELECT</span> <span style="color: #689f38;">'2003-11-06'</span> <span style="color: #00796b;">AS</span> birthday) <span style="color: #00796b;">AS</span> birthday;
+</pre>
+</div>
+
+<p>
+Полученный ответ:
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">RESUlt</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">А вы знали, что я родился 6 November 2003 года, в Thursday.  Видимо придётся завершить рассказ.</td>
+</tr>
+
+<tr>
+<td class="org-left">Это кстати 310 день и 44 неделя в году.</td>
+</tr>
+
+<tr>
+<td class="org-left">А в серьёзной бухгалтерии это 4 квартал года.</td>
+</tr>
+
+<tr>
+<td class="org-left">Эх, что вам ещё рассказать, что я родился в 11 месяц по счёту или то что последний день этого месяца 30.</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+​4. Поработать с функциями DATE<sub>ADD</sub>, DATE<sub>SUB</sub>, DATEDIFF. Один из параметров функции - дата рождения студента. В отчете представить скриншоты с результатом работы функций в MySQL.
+</p>
+
+<p>
+Текст запросов:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-sql" id="orgaae2676"><span style="color: #00796b;">SELECT</span> <span style="color: #B71C1C;">DATE_ADD</span>(<span style="color: #689f38;">'2003-11-06'</span>, <span style="color: #B71C1C;">INTERVAL</span> 2 <span style="color: #0097A7;">DAY</span>) <span style="color: #00796b;">AS</span> <span style="color: #689f38;">'&#1044;&#1077;&#1085;&#1100; &#1088;&#1086;&#1078;&#1076;&#1077;&#1085;&#1080;&#1103; &#1084;&#1086;&#1077;&#1081; &#1087;&#1088;&#1072;&#1073;&#1072;&#1073;&#1091;&#1096;&#1082;&#1080;'</span>;
+</pre>
+</div>
+
+
+<div class="org-src-container">
+<pre class="src src-sql" id="org3c13344"><span style="color: #00796b;">SELECT</span> <span style="color: #0097A7;">YEAR</span>(<span style="color: #B71C1C;">DATE_SUB</span>(<span style="color: #689f38;">'2003-11-06'</span>, <span style="color: #B71C1C;">INTERVAL</span> 24 <span style="color: #0097A7;">YEAR</span>)) <span style="color: #00796b;">AS</span> <span style="color: #689f38;">'&#1043;&#1086;&#1076; &#1088;&#1086;&#1078;&#1076;&#1077;&#1085;&#1080;&#1103; &#1084;&#1086;&#1080;&#1093; &#1088;&#1086;&#1076;&#1080;&#1090;&#1077;&#1083;&#1077;&#1081;'</span>;
+</pre>
+</div>
+
+
+<div class="org-src-container">
+<pre class="src src-sql" id="orgeeaf0d7"><span style="color: #00796b;">SELECT</span> <span style="color: #B71C1C;">DATEDIFF</span>(<span style="color: #689f38;">'2009-10-20'</span>, <span style="color: #689f38;">'2003-11-06'</span>) <span style="color: #00796b;">AS</span> <span style="color: #689f38;">'&#1056;&#1040;&#1047;&#1053;&#1048;&#1062;&#1040; &#1042; &#1044;&#1053;&#1071;&#1061; &#1052;&#1045;&#1046;&#1044;&#1059; &#1056;&#1054;&#1046;&#1044;&#1045;&#1053;&#1048;&#1052;&#1045;&#1052; &#1052;&#1053;&#1054;&#1049; &#1048; &#1052;&#1054;&#1048;&#1052; &#1041;&#1056;&#1040;&#1058;&#1054;&#1052;'</span>;
+</pre>
+</div>
+
+
+<p>
+Полученные ответы:
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-right">День рождения моей пробабушки</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-right">2003-11-08</td>
+</tr>
+</tbody>
+</table>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-right">Год рождения моих родителей</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-right">1979</td>
+</tr>
+</tbody>
+</table>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-right">РАЗНИЦА В ДНЯХ МЕЖДУ РОЖДЕНИМЕМ МНОЙ И МОИМ БРАТОМ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-right">2175</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+​5. Для одной из таблиц индивидуального задания, где имеется дата рождения(сотрудника, клиента и т.д), выполнить запрос, в котором рядом с датой рождения(тип date) будет столбец с датой рождения с типом timestamp. В отчете представить скриншоты с результатом работы функций в MySQL.
+</p>
+
+<p>
+Текст запросов:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-sql" id="org5ce74ab"><span style="color: #00796b;">SELECT</span> date_of_birth <span style="color: #00796b;">AS</span> <span style="color: #0097A7;">TIMESTAMP</span>, <span style="color: #B71C1C;">CAST</span>(date_of_birth <span style="color: #00796b;">as</span> <span style="color: #0097A7;">DATE</span>) <span style="color: #00796b;">AS</span> <span style="color: #0097A7;">DATE</span> <span style="color: #B71C1C;">FROM</span> employee;
+</pre>
+</div>
+
+<p>
+Полученный ответ:
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">TIMESTAMP</th>
+<th scope="col" class="org-right">DATE</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">2003-12-15 12:10:59</td>
+<td class="org-right">2003-12-15</td>
+</tr>
+
+<tr>
+<td class="org-left">1999-07-17 12:11:08</td>
+<td class="org-right">1999-07-17</td>
+</tr>
+
+<tr>
+<td class="org-left">1980-11-06 12:11:18</td>
+<td class="org-right">1980-11-06</td>
+</tr>
+
+<tr>
+<td class="org-left">2006-12-16 12:11:32</td>
+<td class="org-right">2006-12-16</td>
+</tr>
+
+<tr>
+<td class="org-left">2004-07-02 12:11:41</td>
+<td class="org-right">2004-07-02</td>
+</tr>
+</tbody>
+</table>
 </div>
 <div id="postamble" class="status">
-<p class="date">Created: 2023-01-16 Mon 22:17</p>
+<p class="date">Created: 2023-01-17 Tue 12:03</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

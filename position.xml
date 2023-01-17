@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data>
+<row>
+  <id>1</id>
+  <name>Директор</name>
+  <salary>500000</salary>
+  <responsibilities>Руководить</responsibilities>
+  <requirements>null</requirements>
+</row>
+<row>
+  <id>2</id>
+  <name>Продавец</name>
+  <salary>40000</salary>
+  <responsibilities>Эффективно продавать товары</responsibilities>
+  <requirements>1. Выполнять скрипты
+2. Выполнять нормы продаж
+3. Уведомлять покупателей о новых акциях</requirements>
+</row>
+<row>
+  <id>3</id>
+  <name>Главный менеджер</name>
+  <salary>92000</salary>
+  <responsibilities>Следить за работой подчинённых</responsibilities>
+  <requirements>1. Оформлять кучу отчётов
+2. Следить за работой подчинённых</requirements>
+</row>
+<row>
+  <id>5</id>
+  <name>Стажёр</name>
+  <salary>10000</salary>
+  <responsibilities>Учиться работать</responsibilities>
+  <requirements>Должен работать под надзором сотрудника-наставника.</requirements>
+</row>
+<row>
+  <id>6</id>
+  <name>Младший менеджер</name>
+  <salary>30000</salary>
+  <responsibilities>Бумажная работа</responsibilities>
+  <requirements>Оформляет товары и занимается большей бумажной работой чем главный менеджер.</requirements>
+</row>
+</data>
