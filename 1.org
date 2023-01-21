@@ -2,14 +2,16 @@
 
 ​1. Выполнить экспорт данных в формате csv, json и xml из трех таблиц (выбрать любые 3 таблицы из индивидуального задания). В отчете представить скриншоты с содержимым экспортированных файлов.
 
-Таблица сотрудников (employee):
 
-#+begin_src sql :engine mysql  :dbuser org-mode :dbpassword org-mode :database computerserviceooo :exports results :eval no-export :colnames no :hlines yes
+#+begin_src sql :engine mysql  :dbuser org-mode :dbpassword org-mode :database computerserviceooo :exports results :eval no-export :colnames no
   SELECT id, last_name as 'Фамилия', first_name as 'Имя', second_name as 'Отчество', date_of_birth as 'Дата рождения', sex as 'Пол', address as 'Адрес', phone_number as 'Телефон', passport_details as 'Паспорт', position_id as "Должность" FROM employee;
 #+end_src
 
+#+begin_export latex
+\begin{footnotesize}
+#+end_export
 #+CAPTION: Таблица сотрудников
-#+ATTR_LATEX: :environment longtable :align |p{0.3cm}|p{1.5cm}|p{1.5cm}|p{2cm}|p{2cm}|p{0.3cm}|p{1cm}|p{2.2cm}|p{1cm}|p{0.3cm}|
+#+ATTR_LATEX: :environment longtable :align |p{0.3cm}|p{1.5cm}|p{1.5cm}|p{2cm}|p{2cm}|p{0.3cm}|p{1.8cm}|p{2.2cm}|p{1cm}|p{0.3cm}|
 #+RESULTS:
 |  1 | Панков    | Василий | Дмитриевич | 2003-12-15 12:10:59 | 1 | Суховский переулок 23      | +79627011087 | 1111 111111 | 1 |
 |  2 | Гайкин    | Кирилл  | Денисович  | 1999-07-17 12:11:08 | 1 | Кобринская улица 5         | +79118445162 | 2222 222222 | 2 |
@@ -17,13 +19,19 @@
 |  9 | Панков    | Вася    | Дмитриевич | 2006-12-16 12:11:32 | 1 | NULL                       | +79627011087 | 1111 444444 | 2 |
 | 10 | Виктор    | Виктор  | Виктор     | 2004-07-02 12:11:41 | 1 | а                          | +79627011087 | 1111 111111 | 2 |
 
+#+begin_export latex
+\clearpage
+\end{footnotesize}
+#+end_export
+
 Полученный экспорт в CSV:
 
-#+INCLUDE: ./employee.csv src csv
+#+INCLUDE: ./employee.csv src text
 
-#+begin_src sql :engine mysql  :dbuser org-mode :dbpassword org-mode :database computerserviceooo :exports results :hlines yes
+#+begin_src sql :engine mysql  :dbuser org-mode :dbpassword org-mode :database computerserviceooo :exports results
   SELECT * FROM country;
 #+end_src
+
 
 #+CAPTION: Таблица стран
 #+RESULTS:
@@ -54,6 +62,7 @@
 |  3 | Главный менеджер |  92000 | Следить за работой подчинённых | 1. Оформлять кучу отчётов\n2. Следить за работой подчинённых                              |
 |  5 | Стажёр           |  10000 | Учиться работать               | Должен работать под надзором сотрудника-наставника.                                       |
 |  6 | Младший менеджер |  30000 | Бумажная работа                | Оформляет товары и занимается большей бумажной работой чем главный менеджер.              |
+
 
 Полученный экспорт в XML:
 
@@ -183,3 +192,4 @@ SELECT date_of_birth AS TIMESTAMP, CAST(date_of_birth as DATE) AS DATE FROM empl
 | 1980-11-06 12:11:18 | 1980-11-06 |
 | 2006-12-16 12:11:32 | 2006-12-16 |
 | 2004-07-02 12:11:41 | 2004-07-02 |
+
